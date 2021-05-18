@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        .parent {
+            width: 100%;
+            background-color: #182C61;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        form {
+            max-width: 600px;
+            padding: 30px;
+            border: 5px double #25CCF7;
+            text-align: center;
+        }
+        
+        input {
+            outline: none;
+            height: 25px;
+        }
+        
+         ::placeholder {
+            padding-left: 6px;
+        }
+        
+        span {
+            color: red;
+        }
+        
+        button {
+            padding: 4px 8px;
+            cursor: pointer;
+            background-color: #1e3799;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <form action="#" onsubmit="return myname()">
+            <input type="text" id="name" placeholder="Name">
+            <br>
+            <span id="name-data"></span>
+            <br><br><br>
+            <input type="password" id="password" placeholder="Password">
+            <br>
+            <span id="password-data"></span>
+            <br><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    <script>
+        function myname() {
+            var name = document.getElementById("name").value;
+            var pass = document.getElementById("password").value;
+
+            if (name == "") {
+                document.getElementById("name-data").innerHTML = "name is required *"
+                return false;
+            }
+
+            if (pass == "") {
+                document.getElementById("password-data").innerHTML = "password is required *"
+                return false;
+            } else {
+                alert('form submitted')
+            }
+        }
+    </script>
+</body>
+
+</html>
